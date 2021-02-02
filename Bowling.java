@@ -6,17 +6,21 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class Bowling2 {
+public class Bowling {
+	//Creating a HashMap object to save players details
 	HashMap<String,Integer> players = new HashMap<String, Integer>();
 	
+	//Method to store player name and score with String and Integer
 	public void addPlayer(String name, int points) {
 		players.put(name,points);
 	}
 
+	//Displaying players name and scores
 	public void display() {
 		System.out.println("HashMap contains: "+players);
 	}
 	
+	//Method to identify winner of the game
 	public String getWinner() {
 		
 		Set<String> s = players.keySet();
@@ -35,9 +39,6 @@ public class Bowling2 {
 				temp=q;
 			}
 		}
-		/*
-		 * System.out.println(temp); System.out.println(players.containsValue(temp));
-		 */
 		
 		if(players.containsValue(temp)) {
 			for(Map.Entry<String,Integer> e:players.entrySet()) {
@@ -48,8 +49,6 @@ public class Bowling2 {
 				}
 			}
 		}
-		
 		return null;
 	}
-
 }
